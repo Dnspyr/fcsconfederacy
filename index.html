@@ -77,6 +77,34 @@
             font-size: 10px;
             color: grey;
         }
+        .owner-coowner-container {
+            position: absolute;
+            left: 10%;
+            top: 40%;
+            transform: translateY(-50%);
+            text-align: center;
+        }
+        .owner-coowner-container img {
+            width: 200px;
+            height: 200px;
+            border: 5px solid white;
+            margin: 10px;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 1), 0 0 30px rgba(255, 255, 255, 0.8);
+            transition: all 0.3s ease;
+        }
+        .owner-coowner-container img:hover {
+            box-shadow: 0 0 30px rgba(255, 255, 255, 1), 0 0 50px rgba(255, 255, 255, 0.8);
+        }
+        .owner-coowner-container p {
+            font-size: 20px;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 1), 0 0 20px rgba(255, 255, 255, 0.8);
+            color: white;
+            margin-top: 10px;
+            transition: all 0.3s ease;
+        }
+        .owner-coowner-container p:hover {
+            text-shadow: 0 0 30px rgba(255, 255, 255, 1), 0 0 50px rgba(255, 255, 255, 0.8);
+        }
         @keyframes stars {
             0% {
                 transform: translateY(100vh) scale(0.5);
@@ -100,6 +128,16 @@
         <button class="glowing-button" onclick="window.location.href='#'">Projects</button>
         <button class="glowing-button" onclick="window.location.href='retards.html'">Hall Of Retards</button>
     </div>
+    <div class="owner-coowner-container">
+        <div>
+            <img src="assets/me.png" alt="Galaxizs">
+            <p>Galaxizs (Owner)</p>
+        </div>
+        <div>
+            <img src="assets/bae.png" alt="Sside">
+            <p>Sside (Co Owner)</p>
+        </div>
+    </div>
     <div class="particles"></div>
     <script>
         const particleContainer = document.querySelector('.particles');
@@ -118,7 +156,7 @@
         }
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js"></script>
-   <script>
+    <script>
         const music = new Howl({
             src: ['assets/Home.mp3'],
             loop: true,
