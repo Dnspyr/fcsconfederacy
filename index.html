@@ -7,6 +7,15 @@
     <meta property="og:color" content="#85138e">
     <link rel="icon" href="https://www.pngall.com/wp-content/uploads/4/World-Wide-Web-PNG-Free-Image.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js"></script>
+    <script>
+        const music = new Howl({
+            src: ['assets/Home.mp3'],
+            loop: true,
+            volume: 1
+        });
+        music.play();
+    </script>
     <style>
         body {
             margin: 0;
@@ -30,12 +39,14 @@
             top: 10%;
             left: 10%;
             display: flex;
-            flex-direction: column;
+            justify-content: space-between; 
+            width: 100%; 
+            max-width: 600px; 
         }
         .glowing-button {
             margin: 10px;
             padding: 15px 30px;
-            background-color: #85138e;
+            background-color: #ffffff;
             color: white;
             border: none;
             border-radius: 8px;
@@ -58,14 +69,5 @@
         <button class="glowing-button" onclick="location.href='#'">Projects</button>
         <button class="glowing-button" onclick="location.href='#'">Hall Of Retards</button>
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js"></script>
-    <script>
-        const music = new Howl({
-            src: ['assets/Home.mp3'],
-            loop: true,
-            volume: 1
-        });
-        music.play();
-    </script>
 </body>
 </html>
