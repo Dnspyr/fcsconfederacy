@@ -1,13 +1,12 @@
 <html>
 <head>
-    <title id="title">FC Confederacy</title>
-    <meta property="og:image" content="https://files.catbox.moe/4rz37i.png">
+    <title>FC Confederacy</title>
+    <meta property="og:image" content="https://files.catbox.moe/jff6xh.png">
     <meta property="og:description" content="FC Confederacy • Home">
     <meta property="og:type" content="website">
     <meta property="og:color" content="#85138e">
     <link rel="icon" href="https://www.pngall.com/wp-content/uploads/4/World-Wide-Web-PNG-Free-Image.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <link rel="stylesheet" href="main.css">
     <style>
         body {
             margin: 0;
@@ -26,60 +25,51 @@
             font-size: 3rem;
             text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.5);
         }
-        .particles {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-        }
-        .particle {
-            position: absolute;
-            background-color: white;
+        .mute-button {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            width: 50px;
+            height: 50px;
+            background-color: rgba(255, 255, 255, 0.2);
             border-radius: 50%;
-            opacity: 0.6;
-            animation: stars 5s infinite;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: background-color 0.3s;
         }
-        @keyframes stars {
-            0% {
-                transform: translateY(100vh) scale(0.5);
-                opacity: 0.6;
-            }
-            50% {
-                opacity: 1;
-            }
-            100% {
-                transform: translateY(-10vh) scale(1.5);
-                opacity: 0;
-            }
+        .mute-button:hover {
+            background-color: rgba(255, 255, 255, 0.4);
+        }
+        .mute-button i {
+            color: white;
+            font-size: 24px;
         }
     </style>
 </head>
 <body>
     <h1><b>FC Confederacy</b></h1>
-    <div class="particles"></div>
+    <div class="mute-button" id="MuteButton">
+        <i class="fas fa-volume-mute"></i>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js"></script>
     <script>
-        const particleContainer = document.querySelector('.particles');
-        const particleCount = 50;
+        const music = new Howl({
+            src: ['assets/Home.mp3'],
+            loop: true,
+            volume: 1
+        });
+        music.play();
 
-        for (let i = 0; i < particleCount; i++) {
-            const particle = document.createElement('div');
-            const size = Math.random() * 5 + 2;
-            particle.classList.add('particle');
-            particle.style.width = `${size}px`;
-            particle.style.height = `${size}px`;
-            particle.style.left = `${Math.random() * 100}vw`;
-            particle.style.animationDuration = `${Math.random() * 3 + 2}s`;
-            particle.style.animationDelay = `${Math.random() * 2}s`;
-            particleContainer.appendChild(particle);
-        }
+        const MuteButton = document.getElementById('muteButton');
+        let IsMuted = false;
+
+        MuteButton.addEventListener('click', () => {
+            IsMuted = !isMuted;
+            music.mute(isMuted);
+            MuteButton.querySelector('i').className = IsMuted ? 'fas fa-volume-up' : 'fas fa-volume-mute';
+        });
     </script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js"></script>
-<script>
-    const sound = new Howl({
-        src: ["assets/Home.mp3"],
-        loop: true
-    });
-    sound.play();
-</script>
 </body>
 </html>
