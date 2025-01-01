@@ -7,15 +7,6 @@
     <meta property="og:color" content="#85138e">
     <link rel="icon" href="https://www.pngall.com/wp-content/uploads/4/World-Wide-Web-PNG-Free-Image.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js"></script>
-    <script>
-        const music = new Howl({
-            src: ['assets/Home.mp3'],
-            loop: true,
-            volume: 1
-        });
-        music.play();
-    </script>
     <style>
         body {
             margin: 0;
@@ -33,31 +24,31 @@
             text-align: center;
             font-size: 3rem;
             text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.5);
+            pointer-events: none;
         }
         .button-container {
             position: absolute;
-            top: 10%;
-            left: 10%;
+            top: 0;
+            left: 0;
             display: flex;
-            justify-content: space-between; 
-            width: 100%; 
-            max-width: 600px; 
+            justify-content: space-between;
+            width: auto;
         }
         .glowing-button {
             margin: 10px;
             padding: 15px 30px;
-            background-color: #ffffff;
+            background-color: black;
             color: white;
-            border: none;
+            border: 2px solid white; 
             border-radius: 8px;
             font-size: 16px;
             text-transform: uppercase;
             cursor: pointer;
-            box-shadow: 0 0 5px rgba(133, 19, 142, 0.8), 0 0 10px rgba(133, 19, 142, 0.6), 0 0 15px rgba(133, 19, 142, 0.4);
+            box-shadow: 0 0 5px rgba(255, 255, 255, 0.8), 0 0 10px rgba(255, 255, 255, 0.6), 0 0 15px rgba(255, 255, 255, 0.4);
             transition: all 0.3s ease;
         }
         .glowing-button:hover {
-            box-shadow: 0 0 15px rgba(133, 19, 142, 1), 0 0 30px rgba(133, 19, 142, 0.8), 0 0 50px rgba(133, 19, 142, 0.6);
+            box-shadow: 0 0 15px rgba(255, 255, 255, 1), 0 0 30px rgba(255, 255, 255, 0.8), 0 0 50px rgba(255, 255, 255, 0.6);
             transform: translateX(10px);
         }
     </style>
@@ -65,9 +56,18 @@
 <body>
     <h1><b>FC Confederacy</b></h1>
     <div class="button-container">
-        <button class="glowing-button" onclick="location.href='#'">Discord Server</button>
-        <button class="glowing-button" onclick="location.href='#'">Projects</button>
-        <button class="glowing-button" onclick="location.href='#'">Hall Of Retards</button>
+        <button class="glowing-button" onclick="location.href='#'">Button 1</button>
+        <button class="glowing-button" onclick="location.href='#'">Button 2</button>
+        <button class="glowing-button" onclick="location.href='#'">Button 3</button>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js"></script>
+    <script>
+        const music = new Howl({
+            src: ['assets/Home.mp3'],
+            loop: true,
+            volume: 1
+        });
+        music.play();
+    </script>
 </body>
 </html>
