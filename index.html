@@ -55,9 +55,6 @@
     </style>
 </head>
 <body>
-    <audio autoplay loop>
-        <source src="assets/Home.mp3" type="audio/mpeg">
-    </audio>
     <h1><b>FC Confederacy</b></h1>
     <div class="particles"></div>
     <script>
@@ -76,5 +73,13 @@
             particleContainer.appendChild(particle);
         }
     </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js"></script>
+<script>
+    const sound = new Howl({
+        src: ["assets/Home.mp3"],
+        loop: true
+    });
+    sound.play();
+</script>
 </body>
 </html>
