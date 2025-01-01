@@ -8,6 +8,14 @@
     <link rel="icon" href="https://www.pngall.com/wp-content/uploads/4/World-Wide-Web-PNG-Free-Image.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="main.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js"></script>
+    <script>
+        const sound = new Howl({
+            src: ["assets/hor.mp3"],
+            loop: true
+        });
+        sound.play();
+    </script>
     <style>
         body {
             margin: 0;
@@ -72,14 +80,6 @@
             particleContainer.appendChild(particle);
         }
     </script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js"></script>
-<script>
-    const sound = new Howl({
-        src: ["assets/hor.mp3"],
-        loop: true
-    });
-    sound.play();
-</script>
 
 </body>
 </html>
