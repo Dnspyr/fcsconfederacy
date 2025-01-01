@@ -25,33 +25,38 @@
             font-size: 3rem;
             text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.5);
         }
-        .mute-button {
-            position: fixed;
-            top: 20px;
-            left: 20px;
-            width: 50px;
-            height: 50px;
-            background-color: rgba(255, 255, 255, 0.2);
-            border-radius: 50%;
+        .button-container {
+            position: absolute;
+            top: 10%;
+            left: 10%;
             display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: background-color 0.3s;
+            flex-direction: column;
         }
-        .mute-button:hover {
-            background-color: rgba(255, 255, 255, 0.4);
-        }
-        .mute-button i {
+        .glowing-button {
+            margin: 10px;
+            padding: 15px 30px;
+            background-color: #85138e;
             color: white;
-            font-size: 24px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            text-transform: uppercase;
+            cursor: pointer;
+            box-shadow: 0 0 5px rgba(133, 19, 142, 0.8), 0 0 10px rgba(133, 19, 142, 0.6), 0 0 15px rgba(133, 19, 142, 0.4);
+            transition: all 0.3s ease;
+        }
+        .glowing-button:hover {
+            box-shadow: 0 0 15px rgba(133, 19, 142, 1), 0 0 30px rgba(133, 19, 142, 0.8), 0 0 50px rgba(133, 19, 142, 0.6);
+            transform: translateX(10px);
         }
     </style>
 </head>
 <body>
     <h1><b>FC Confederacy</b></h1>
-    <div class="mute-button" id="MuteButton">
-        <i class="fas fa-volume-mute"></i>
+    <div class="button-container">
+        <button class="glowing-button" onclick="location.href='#'">Discord Server</button>
+        <button class="glowing-button" onclick="location.href='#'">Projects</button>
+        <button class="glowing-button" onclick="location.href='#'">Hall Of Retards</button>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js"></script>
     <script>
@@ -61,15 +66,6 @@
             volume: 1
         });
         music.play();
-
-        const muteButton = document.getElementById('MuteButton');
-        let isMuted = false;
-
-        muteButton.addEventListener('click', () => {
-            IsMuted = !IsMuted;
-            music.mute(IsMuted);
-            MuteButton.querySelector('i').className = IsMuted ? 'fas fa-volume-up' : 'fas fa-volume-mute';
-        });
     </script>
 </body>
 </html>
