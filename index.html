@@ -18,56 +18,12 @@
         }
         h1 {
             position: absolute;
-            top: 20%;
+            top: 15%;
             left: 50%;
             transform: translate(-50%, -50%);
             text-align: center;
-            font-size: 3rem;
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.5);
-        }
-        .button-container {
-            position: absolute;
-            top: 30%;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            width: auto;
-            z-index: 1000;
-        }
-        .glowing-button {
-            margin: 10px;
-            padding: 15px 30px;
-            background-color: black;
-            color: white;
-            border: 2px solid white; 
-            border-radius: 8px;
-            font-size: 16px;
-            text-transform: uppercase;
-            opacity: 0.6;
-            cursor: pointer;
-            box-shadow: 0 0 5px rgba(255, 255, 255, 0.8), 0 0 10px rgba(255, 255, 255, 0.6), 0 0 15px rgba(255, 255, 255, 0.4);
-            transition: all 0.3s ease;
-            z-index: 1000;
-        }
-        .glowing-button:hover {
-            box-shadow: 0 0 15px rgba(255, 255, 255, 1), 0 0 30px rgba(255, 255, 255, 0.8), 0 0 50px rgba(255, 255, 255, 0.6);
-            transform: translateX(10px);
-        }
-        .particles {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            z-index: -1;
-        }
-        .particle {
-            position: absolute;
-            background-color: white;
-            border-radius: 50%;
-            opacity: 0.6;
-            animation: stars 5s infinite;
+            font-size: 2rem;
+            text-shadow: 0 0 5px rgba(255, 255, 255, 0.8), 0 0 10px rgba(255, 255, 255, 0.5);
         }
         .credit {
             font-family: "Courier New", Courier, monospace;
@@ -77,34 +33,86 @@
             font-size: 10px;
             color: grey;
         }
-        .owner-coowner-container {
+
+        .owner-container, .coowner-container {
             position: absolute;
-            left: 10%;
-            top: 40%;
-            transform: translateY(-50%);
-            text-align: center;
+            top: 35%;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 15px;
         }
-        .owner-coowner-container img {
-            width: 200px;
-            height: 200px;
-            border: 5px solid white;
-            margin: 10px;
-            box-shadow: 0 0 15px rgba(255, 255, 255, 1), 0 0 30px rgba(255, 255, 255, 0.8);
-            transition: all 0.3s ease;
+
+        .owner-container img, .coowner-container img {
+            width: 80px; 
+            height: 80px; 
+            border-radius: 50%;
+            border: 3px solid white; 
+            margin-right: 10px;
         }
-        .owner-coowner-container img:hover {
-            box-shadow: 0 0 30px rgba(255, 255, 255, 1), 0 0 50px rgba(255, 255, 255, 0.8);
-        }
-        .owner-coowner-container p {
-            font-size: 20px;
-            text-shadow: 0 0 10px rgba(255, 255, 255, 1), 0 0 20px rgba(255, 255, 255, 0.8);
+
+        .owner-container p, .coowner-container p {
+            font-size: 1.2rem; /* Smaller font */
+            font-weight: bold;
             color: white;
-            margin-top: 10px;
+            text-shadow: 0 0 5px rgba(255, 255, 255, 0.8), 0 0 10px rgba(255, 255, 255, 0.5); 
+        }
+
+        .owner-container img, .owner-container p, .coowner-container img, .coowner-container p {
+            box-shadow: 0 0 10px rgba(255, 255, 255, 1), 0 0 20px rgba(255, 255, 255, 0.8), 0 0 30px rgba(255, 255, 255, 0.6); 
+        }
+
+        .button-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: auto;
+            z-index: 1000;
+        }
+
+        .glowing-button {
+            margin: 10px;
+            padding: 15px 30px;
+            background-color: black;
+            color: white;
+            border: 2px solid white;
+            border-radius: 8px;
+            font-size: 16px;
+            text-transform: uppercase;
+            opacity: 0.6;
+            cursor: pointer;
+            box-shadow: 0 0 5px rgba(255, 255, 255, 0.8), 0 0 10px rgba(255, 255, 255, 0.6), 0 0 15px rgba(255, 255, 255, 0.4);
             transition: all 0.3s ease;
+            z-index: 1000;
         }
-        .owner-coowner-container p:hover {
-            text-shadow: 0 0 30px rgba(255, 255, 255, 1), 0 0 50px rgba(255, 255, 255, 0.8);
+
+        .glowing-button:hover {
+            box-shadow: 0 0 15px rgba(255, 255, 255, 1), 0 0 30px rgba(255, 255, 255, 0.8), 0 0 50px rgba(255, 255, 255, 0.6);
+            transform: translateX(10px);
         }
+
+        .particles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+        }
+
+        .particle {
+            position: absolute;
+            background-color: white;
+            border-radius: 50%;
+            opacity: 0.6;
+            animation: stars 5s infinite;
+        }
+
         @keyframes stars {
             0% {
                 transform: translateY(100vh) scale(0.5);
@@ -123,21 +131,22 @@
 <body>
     <h1><b>FC Confederacy</b></h1>
     <div class="credit">Made By Galaxizs • Inspo https://culprits-society.com/</div>
+    
+    <div class="owner-container">
+        <img src="assets/me.png" alt="Galaxizs (Owner)">
+        <p>Galaxizs (Owner)</p>
+    </div>
+    <div class="coowner-container">
+        <img src="assets/bae.png" alt="Sside (Co Owner)">
+        <p>Sside (Co Owner)</p>
+    </div>
+
     <div class="button-container">
         <button class="glowing-button" onclick="window.location.href='https://discord.gg/BBRu7P6EVm'">Discord Server</button>
         <button class="glowing-button" onclick="window.location.href='#'">Projects</button>
         <button class="glowing-button" onclick="window.location.href='retards.html'">Hall Of Retards</button>
     </div>
-    <div class="owner-coowner-container">
-        <div>
-            <img src="assets/me.png" alt="Galaxizs">
-            <p>Galaxizs (Owner)</p>
-        </div>
-        <div>
-            <img src="assets/bae.png" alt="Sside">
-            <p>Sside (Co Owner)</p>
-        </div>
-    </div>
+
     <div class="particles"></div>
     <script>
         const particleContainer = document.querySelector('.particles');
@@ -156,7 +165,7 @@
         }
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js"></script>
-    <script>
+   <script>
         const music = new Howl({
             src: ['assets/Home.mp3'],
             loop: true,
